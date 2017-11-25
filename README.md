@@ -20,7 +20,6 @@
 
 ### Tag
 - `/api/tag/` GET
-
-- `/api/tag/add/` POST - TODO
+- `/api/tag/add/` POST
   - title
 
