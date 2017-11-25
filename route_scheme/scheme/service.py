@@ -13,6 +13,8 @@ class AmapService(object):
         res = requests.get(url,)
         print parameters
 
+        
+
     @classmethod
     def get_weather(cls, ip):
         url = "http://restapi.amap.com/v3/weather/weatherInfo?"
