@@ -9,9 +9,9 @@ from jsonfield import JSONField
 # Create your models here.
 class UserProfile(models.Model):
     user = models.OneToOneField(User, related_name='profile')
-    tags = models.ManyToManyField(Tag)
-    modes = models.ManyToManyField(Mode)
-    location_count = JSONField()
+    tags = models.ManyToManyField(Tag, blank=True, null=True)
+    modes = models.ManyToManyField(Mode, blank=True, null=True)
+    location_count = JSONField(default={}, blank=True, null=True)
 
     def __unicode__(self):
         return self.user.username

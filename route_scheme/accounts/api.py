@@ -16,6 +16,8 @@ class AccountViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated, )
 
     def get_queryset(self):
+        if self.request.user.is_superuser:
+            return User.objects.all()
         return User.objects.filter(id=self.request.user.id)
 
     @list_route(methods=['GET'])
