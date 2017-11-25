@@ -33,17 +33,17 @@ class ModeSerializer(serializers.ModelSerializer):
         return mode
 
     def get_duration(self, obj):
-        extra_fields = json.loads(obj.extra_fields)
-        return extra_fields['get_duration']
+        extra_fields = obj.extra_fields
+        return extra_fields['duration']
 
     def get_begin_time(self, obj):
-        extra_fields = json.loads(obj.extra_fields)
+        extra_fields = obj.extra_fields
         return extra_fields['begin_time']
 
     def get_end_time(self, obj):
-        extra_fields = json.loads(obj.extra_fields)
+        extra_fields = obj.extra_fields
         return extra_fields['end_time']
 
     def get_come_over_locations(self, obj):
-        extra_fields = json.loads(obj.extra_fields)
+        extra_fields = obj.extra_fields
         return extra_fields['come_over_locations']

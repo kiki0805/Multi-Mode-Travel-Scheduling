@@ -4,7 +4,7 @@ from jsonfield import JSONField
 # Create your models here.
 
 class Mode(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, blank=True, null=True)
     name = models.CharField(max_length=255)
     extra_fields = JSONField()
     # {

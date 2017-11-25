@@ -2,18 +2,16 @@
 from django.contrib.auth.models import User
 from accounts.models import UserProfile
 from tags.serializers import TagSerializer
-# from modes.serializers import ModeSerializer
 from rest_framework import serializers
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
     username = serializers.CharField(source='user.username')
     tags = TagSerializer(many=True)
-    # modes = ModeSerializer(many=True)
 
     class Meta:
         model = UserProfile
-        fields = ('id', 'username', 'tags')
+        fields = ('id', 'username', 'tags', 'location_count')
 
 
 class UserSerializer(serializers.ModelSerializer):
