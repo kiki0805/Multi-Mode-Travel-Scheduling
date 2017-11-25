@@ -45,3 +45,4 @@ def recommend(key_user_tag):
         print(output_tag)
 
     return output
+#recommend(set(['KTV','桌游店','游乐场','体育场','体育馆']))
