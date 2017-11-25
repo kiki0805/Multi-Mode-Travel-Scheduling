@@ -7,3 +7,10 @@ class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
         fields = ('id', 'title')
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+        title = validated_data['title']
+        tag = Tag.objects.create(title=title)
+        user.profile.tags.add(tag)
+        return tag
