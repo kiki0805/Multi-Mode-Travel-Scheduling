@@ -1,2 +1,5 @@
 ### Django ###
 *.pyc
+
+### React ###
+/scheme-frontend/node_modules/
