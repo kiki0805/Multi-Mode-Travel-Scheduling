@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'accounts',
     'mode',
     'tags',
+    'scheme',
 )
 
 MIDDLEWARE_CLASSES = (

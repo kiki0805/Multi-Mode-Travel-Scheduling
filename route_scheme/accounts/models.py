@@ -5,6 +5,7 @@ from tags.models import Tag
 from mode.models import Mode
 from jsonfield import JSONField
 
+
 # Create your models here.
 class UserProfile(models.Model):
     user = models.OneToOneField(User, related_name='profile')
@@ -16,5 +17,8 @@ class UserProfile(models.Model):
         return self.user.username
 
     def update_count(self, location):
-        self.location_count[location] += 1
+        try:
+            self.location_count[location] += 1
+        except:
+            self.location_count[location] = 1
         self.save()

@@ -8,6 +8,7 @@ from rest_framework.decorators import detail_route, list_route
 from rest_framework.response import Response
 from tags.models import Tag
 from tags.serializers import TagSerializer
+from tags.service import TagService
 
 
 class TagViewSet(viewsets.ModelViewSet):
@@ -17,3 +18,8 @@ class TagViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Tag.objects.all()
+
+    @list_route(methods=['GET'])
+    def assign(self, request):
+        TagService.get_related_tags(request.user)
+        return Response(status=status.HTTP_200_OK)

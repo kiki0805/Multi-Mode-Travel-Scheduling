@@ -7,4 +7,5 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
     url(r'^api/', include('route_scheme.api_urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^scheme/$', 'scheme.views.scheme'),
 ]

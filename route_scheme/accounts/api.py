@@ -7,10 +7,7 @@ from rest_framework import status
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route, list_route
 from rest_framework.response import Response
-from accounts.serializers import (
-    UserSerializer,
-    SigninSerializer,
-)
+from accounts.serializers import UserSerializer, SigninSerializer
 
 
 class AccountViewSet(viewsets.ModelViewSet):
@@ -37,7 +34,7 @@ class AccountViewSet(viewsets.ModelViewSet):
         user = get_object_or_404(User, username=username)
         user = authenticate(username=user.username, password=password)
         if user is None:
-            error = _('The login and/or password you specified are not correct.')
+            error = 'The login and/or password you specified are not correct.'
             return Response({'error': error}, status=status.HTTP_401_UNAUTHORIZED)
 
         django_login(request, user)
