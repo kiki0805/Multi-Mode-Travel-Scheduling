@@ -18,7 +18,7 @@ class UserStatus(models.Model):
     count = models.IntegerField(default=1)
 
     def __unicode__(self):
-        return "%s:%s" % self.user.username, self.location
+        return self.user.username
 
     def update_count(self):
         self.count += 1
