@@ -18,6 +18,7 @@
   ```
 
 ### Mode
+- `/api/mode` GET
 - `/api/mode/` POST
   - name
   - duration
@@ -44,3 +45,13 @@
 - `/api/tag/add/` POST
   - title
 
+
+### Scheme
+- `/scheme/` GET
+  - origin
+  - destination
+  - mode_id
+  - duration
+  - begin_time
+  - end_time
+  - come_over_locations

@@ -1,1 +1,4 @@
 jsonfield==2.0.1
+requests==2.18.2
+Django==1.8
+djangorestframework==3.6.3
