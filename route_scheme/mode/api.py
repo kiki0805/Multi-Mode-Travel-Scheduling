@@ -16,4 +16,4 @@ class ModeViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated, )
 
     def get_queryset(self):
-        return self.request.user.mode_set.all()
+        return self.request.user.mode_set.all() | Mode.objects.filter(user=None)
