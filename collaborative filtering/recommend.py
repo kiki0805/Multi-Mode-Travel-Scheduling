@@ -43,5 +43,5 @@ def recommend(key_user_tag):
         del counting_bin[output_tag];
         output.append(output_tag);
         print(output_tag)
-    
+
     return output
