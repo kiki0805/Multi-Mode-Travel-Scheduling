@@ -1,12 +1,12 @@
+from django.contrib.auth.models import User
 from django.db import models
-from tags.models import Tag
-from accounts.models import UserProfile
+from jsonfield import JSONField
 # Create your models here.
 
 class Mode(models.Model):
-    name = models.TextField()
-    user = models.ForeignKey(UserProfile)
-    extra_fields = models.JSONField()
+    user = models.ForeignKey(User)
+    name = models.CharField(max_length=255)
+    extra_fields = JSONField()
 
     def __unicode__(self):
         return self.name
