@@ -2,7 +2,7 @@
 from django.contrib.auth.models import User
 from django.contrib.auth import login as django_login, authenticate, logout as django_logout
 from django.shortcuts import get_object_or_404
-from rest_framework import permissions
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import status
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route, list_route
@@ -16,7 +16,7 @@ from accounts.serializers import (
 class AccountViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (IsAuthenticated)
+    permission_classes = (IsAuthenticated, )
 
     def get_queryset(self):
         return User.objects.filter(id=self.request.user.id)
@@ -25,7 +25,7 @@ class AccountViewSet(viewsets.ModelViewSet):
     def profile(self, request):
         return Response(self.get_serializer(request.user).data)
 
-    @list_route(methods=['POST'], permission_classes=[AllowAny])
+    @list_route(methods=['POST'], permission_classes=[AllowAny, ])
     def signin(self, request):
         serializer = SigninSerializer(data=request.data)
         if not serializer.is_valid():
@@ -43,7 +43,7 @@ class AccountViewSet(viewsets.ModelViewSet):
         django_login(request, user)
         return Response({'next': '/'}, status=status.HTTP_302_FOUND)
 
-    @list_route(methods=['GET'], permission_classes=[AllowAny])
+    @list_route(methods=['GET'], permission_classes=[AllowAny, ])
     def logout(self, request):
         django_logout(request)
         return Response({'next': '/'}, status=status.HTTP_302_FOUND)
