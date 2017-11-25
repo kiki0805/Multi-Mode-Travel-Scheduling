@@ -7,6 +7,23 @@ class Mode(models.Model):
     user = models.ForeignKey(User)
     name = models.CharField(max_length=255)
     extra_fields = JSONField()
+    # {
+    # 'duration': {
+    #   'weight': ,
+    #   'value': , 
+    # },
+    # 'begin_time': {
+    #   'weight': ,
+    #   'value': ,
+    #  }, 
+    # 'end_time': {
+    #   'weight': ,
+    #   'value': ,
+    # },
+    # 'come_over_locations': {
+    #   'weight': ,
+    #   'value': ,
+    # }}
 
     def __unicode__(self):
         return self.name

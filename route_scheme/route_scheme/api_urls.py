@@ -3,11 +3,12 @@ from rest_framework import routers
 
 from accounts.api import AccountViewSet
 from tags.api import TagViewSet
+from mode.api import ModeViewSet
 
 router = routers.DefaultRouter()
 router.register(r'accounts', AccountViewSet)
 router.register(r'tag', TagViewSet)
-# route.register(r'mode', ModeViewSet)
+router.register(r'mode', ModeViewSet)
 
 urlpatterns = patterns(
     'api',
