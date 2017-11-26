@@ -45,7 +45,7 @@ class FormInput extends React.Component {
           <Cascader options={modes} />
         </FormItem>
         <FormItem>
-          <Button type="primary" htmlType="submit">Get a Scheme!</Button>
+          <Button style={{ width: 337 }} type="primary" htmlType="submit">Get a Scheme!</Button>
         </FormItem>
       </Form>
     );

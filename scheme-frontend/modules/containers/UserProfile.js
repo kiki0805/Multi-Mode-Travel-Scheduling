@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Avatar, Col, Card, Tag, Transfer } from 'antd';
-import EchartsTest from '../components/EchartsTest'
+import EchartsTest from '../components/EchartsTest';
 const mockData = [];
 for (let i = 0; i < 20; i++) {
   mockData.push({
