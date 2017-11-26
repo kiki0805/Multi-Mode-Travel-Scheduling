@@ -55,3 +55,9 @@
   - begin_time
   - end_time
   - come_over_locations
+
+## Instruction
+- Install dependencies both for backend or frontend.(in `requirements.txt` and `package.json`)
+- Backend startup: In `route_scheme` folder, run `sudo python manage.py runserver 0.0.0.0:8000`.
+- Frontend startup: In `scheme-frontend` folder, run `sudo npm run start`.
+- Collaborative filtering: In `collaborative filtering`, run `sudo python3 generate_route.py`.
